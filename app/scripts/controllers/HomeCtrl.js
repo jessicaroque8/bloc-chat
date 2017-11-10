@@ -1,9 +1,9 @@
 (function() {
-    function HomeCtrl() {
-      
+    function HomeCtrl(Room, $FirebaseArray) {
+      this.Rooms = Room.all;
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', HomeCtrl);
+        .controller('HomeCtrl', ['Room', '$firebaseArray', HomeCtrl]);
 })();
