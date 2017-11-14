@@ -39,6 +39,7 @@ body {
   overflow: auto;
   background: #ecf0f1;
   min-height: 600px;
+  color: #222;
 }
 
 .sidebar {
@@ -84,4 +85,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar li:hover {
    background-color: #1abc9c;
+}
+
+.modal-title {
+   margin: auto;
 }

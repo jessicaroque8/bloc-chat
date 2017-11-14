@@ -3,21 +3,30 @@
 
 
      <div class="content-wrapper">
-      <main class="content">
-       <h1>Content</h1>
-       <p>&larr; Responsive Width &rarr;</p>
-    </main>
+      <main class="content" id="content">
+
+      </main>
     </div>
 
 
     <section class="sidebar">
       <h1>Bloc Chat</h1>
 
+
       <ul ng-repeat="room in home.Rooms">
           <li>
              {{ room.$value }}
           </li>
       </ul>
+
+      <div ng-controller="ModalCtrl as $ctrl">
+
+         <button type="button"
+             class="btn btn-default"
+             ng-click="$ctrl.open('sm', '#content')">
+                 Create a Room
+         </button>
+      </div>
    </section>
 
 
