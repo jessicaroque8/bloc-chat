@@ -1,10 +1,10 @@
 (function () {
    function ModalInstanceCtrl ($uibModalInstance, items) {
       var modal = this;
-         modal.items = items;
-         modal.selected = {
-           item: modal.items[0]
-         };
+         // modal.items = items;
+         // modal.selected = {
+         //   item: modal.items[0]
+         // };
 
          modal.ok = function () {
            $uibModalInstance.close(modal.selected.item);

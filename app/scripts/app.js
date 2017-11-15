@@ -16,7 +16,7 @@
 
 
      angular
-         .module('blocChat', ['ui.router', 'ui.bootstrap', 'angular-animate', 'ngSanitize', 'firebase'])
+         .module('blocChat', ['ui.router', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ui.bootstrap', 'firebase'])
          .config(config);
          console.log("app loaded");
  })();

@@ -3,8 +3,14 @@
 </div>
 
 <div class="modal-body" id="modal-body">
-   <label>Enter a room name</label>
-   <input type="text" id="newroom" />
+   <ul>
+      <li ng-repeat="item in modal.items">
+         <a href="#" ng-click="$event.preventDefault(); modal.selected.item = item">{{ item }}</a>
+      </li>
+   </ul>
+   <div class="ng-show">
+      Selected: <b>{{ modal.selected.item }}</b>
+   </div>
 </div>
 
 <div class="modal-footer">

@@ -14,16 +14,16 @@ body {
   margin: 20px 0
 }
 
-.page:after {
+/*.page:after {
   content: "";
   display: table;
   clear: both;
-}
+}*/
 
 .wrapper {
   max-width: 1160px;
   margin: 0 auto;
-  position: relative;
+  /*position: relative;*/
   padding: 0 20px;
   min-height: 600px;
 }
@@ -90,3 +90,21 @@ h1, h2, h3, h4, h5, h6 {
 .modal-title {
    margin: auto;
 }
+
+/*div.test {
+  transition: all linear 0.5s;
+  background-color: lightblue;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  top:-200px;
+  left: 200px;
+}*/

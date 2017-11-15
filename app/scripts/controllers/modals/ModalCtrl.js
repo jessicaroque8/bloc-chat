@@ -7,7 +7,7 @@
 
         this.open = function (size, parentSelector, templateURL) {
           var parentElem = parentSelector ?
-            angular.element($document[0].querySelector('.content ' + parentSelector)) : undefined;
+            angular.element($document[0].querySelector('.modal-container' + parentSelector)) : undefined;
           var modalInstance = $uibModal.open({
             animation: modal.animationsEnabled,
             backdrop: true,
@@ -20,11 +20,18 @@
             appendTo: parentElem,
             resolve: {
               items: function () {
-                return modal.items;
+                return console.log("resolved");
               }
             }
           });
+         modalInstance.result.then(function (selectedItem) {
+            modal.selected = selectedItem;
+         }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+         });
        };
+
+
 
    }
 
