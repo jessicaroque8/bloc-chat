@@ -1,6 +1,5 @@
 (function() {
   function Room($firebaseArray) {
-     //Create object Room.
     var Room = {};
     //firebase.database().ref(). Reference the firebase database service.
     //.child("rooms") Reference specifically the "rooms" and its children.
@@ -8,13 +7,20 @@
     //Turn the "rooms" database info into an array.
     var rooms = $firebaseArray(ref);
 
-    //Assign a property "all" to Room and set the value to the rooms array
-    //from Firebase.
+    /**
+    * @desc Holds the Firebase array of rooms.
+    * @type {Object}
+    */
     Room.all = rooms;
-    Room.ref = ref;
 
+
+    /**
+    * @function add
+    * @desc Adds a new room to the Firebase Array with a unique key.
+    * @param {Object} room
+    */
     Room.add = function(room) {
-        Room.all = rooms.$add({room}).then(function(ref) {
+        Room.all = rooms.$add({name: room}).then(function(ref) {
            var id = ref.key;
            console.log("added record with id " + id);
            rooms.$indexFor(id);
