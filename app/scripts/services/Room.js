@@ -11,10 +11,15 @@
     //Assign a property "all" to Room and set the value to the rooms array
     //from Firebase.
     Room.all = rooms;
+    Room.ref = ref;
 
     Room.add = function(room) {
-        rooms.$add(room);
-    };
+        Room.all = rooms.$add({room}).then(function(ref) {
+           var id = ref.key;
+           console.log("added record with id " + id);
+           rooms.$indexFor(id);
+        });
+     };
 
     return Room;
   }

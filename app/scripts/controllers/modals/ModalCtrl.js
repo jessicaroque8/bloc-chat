@@ -1,15 +1,13 @@
 (function() {
    function ModalCtrl ($uibModal, $log, $document) {
       var modal = this;
-        modal.items = ['item1', 'item2', 'item3'];
-
-        modal.animationsEnabled = true;
+      
 
         this.open = function (size, parentSelector, templateURL) {
           var parentElem = parentSelector ?
-            angular.element($document[0].querySelector('.modal-container' + parentSelector)) : undefined;
+            angular.element($document[0].querySelector('.content' + parentSelector)) : undefined;
           var modalInstance = $uibModal.open({
-            animation: modal.animationsEnabled,
+            animation: true,
             backdrop: true,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
@@ -19,21 +17,21 @@
             size: size,
             appendTo: parentElem,
             resolve: {
-              items: function () {
-                return console.log("resolved");
-              }
+               input: function () {
+                  return console.log('resolve here');
+               }
             }
-          });
+         });
          modalInstance.result.then(function (selectedItem) {
             modal.selected = selectedItem;
          }, function () {
             $log.info('Modal dismissed at: ' + new Date());
          });
-       };
-
-
-
+      };
    }
+
+
+
 
     angular
         .module('blocChat')

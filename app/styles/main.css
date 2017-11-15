@@ -7,7 +7,7 @@ body {
   background-color: #757575;
   text-align: center;
   font-family: 'Hinds', sans-serif;
-  color: #fff;
+  color: #333;
 }
 
 .page {
@@ -90,21 +90,3 @@ h1, h2, h3, h4, h5, h6 {
 .modal-title {
    margin: auto;
 }
-
-/*div.test {
-  transition: all linear 0.5s;
-  background-color: lightblue;
-  height: 100px;
-  width: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-.ng-hide {
-  height: 0;
-  width: 0;
-  background-color: transparent;
-  top:-200px;
-  left: 200px;
-}*/
