@@ -10,6 +10,7 @@
 
     Message.setActive = function(roomId) {
       Message.activeMessages = $firebaseArray(ref.orderByChild('roomID').equalTo(roomId));
+
       return Message.activeMessages;
     };
 

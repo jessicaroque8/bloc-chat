@@ -1,11 +1,12 @@
 (function() {
-   function ModalCtrl ($uibModal, $log, $document) {
+   function ModalCtrl ($uibModal, $log, $document, Room, Message) {
       var modal = this;
+      var modalRoom = Room;
+      var modalMsg = Message;
 
-
-        this.open = function (size, parentSelector, templateURL) {
-          var parentElem = parentSelector ?
-            angular.element($document[0].querySelector('.page' + parentSelector)) : undefined;
+        this.open = function (size, templateURL) {
+         //  var parentElem = parentSelector ?
+         //    angular.element($document[0].querySelector('.page' + parentSelector)) : undefined;
           var modalInstance = $uibModal.open({
             animation: true,
             backdrop: true,
@@ -15,19 +16,22 @@
             controller: 'ModalInstanceCtrl',
             controllerAs: 'modal',
             size: size,
-            appendTo: parentElem,
+            // appendTo: parentElem,
             resolve: {
-               input: function () {
-                  return console.log('resolve here');
+               input: console.log("What is this resolve for?")
                }
-            }
-         });
-         modalInstance.result.then(function (selectedItem) {
-            modal.selected = selectedItem;
-         }, function () {
+
+          });
+          modalInstance.result.then(function (room) {
+             modalRoom.add(room);
+             (console.log(Room.all));
+             modalRoom.setActive(room);
+             (console.log(Room.activeRoom));
+            //  Message.setActive(room.$id);
             $log.info('Modal dismissed at: ' + new Date());
-         });
-      };
+            });
+         };
+
    }
 
 
@@ -35,6 +39,5 @@
 
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['$uibModal', '$log', '$document', ModalCtrl]);
-   console.log("modalctrl loaded");
+        .controller('ModalCtrl', ['$uibModal', '$log', '$document', 'Room', 'Message', ModalCtrl]);
 })();

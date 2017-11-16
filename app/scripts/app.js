@@ -20,6 +20,6 @@
 
 
      angular
-         .module('blocChat', ['ui.router', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ui.bootstrap', 'firebase'])
+         .module('blocChat', ['ui.router', 'ngCookies', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ui.bootstrap', 'firebase'])
          .config(config);
  })();
