@@ -4,19 +4,30 @@
    </div>
 
    <div class="indvmessages">
-      <ul>
+      <ul ng-repeat="message in home.Message.activeMessages" ng-class-even="'msgrow'">
          <li>
-            <h3>User Name</h3>
+            <h3>{{ message.username}}</h3>
             <p>
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-         </li>
-         <li>
-            <h3>User Name</h3>
-            <p>
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+               {{ message.content }}
             </p>
          </li>
       </ul>
    </div>
+
+   <div class="container">
+      <div class="sendmsg col-lg-6">
+          <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+   </div>
+
+
+
+
+
 </div>

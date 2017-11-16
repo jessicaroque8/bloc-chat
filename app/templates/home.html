@@ -1,4 +1,3 @@
-<div class="page">
   <div class="wrapper">
 
 
@@ -15,14 +14,14 @@
 
 
       <ul ng-repeat="room in home.Room.all">
-          <li ui-sref="home.chat" ng-click="home.Room.setActive(room)">
+          <li ui-sref="home.chat" ng-click="home.Room.setActive(room); home.Message.setActive(room.$id)">
              {{ room.name }}
           </li>
       </ul>
 
       <div class="btn-container" ng-controller="ModalCtrl as modal">
-         <button type="custombtn"
-             class="custombtn btn btn-default"
+         <button type="submit"
+             class="custombtn btn btn-lg"
              ng-click="modal.open('sm', '.page', '/templates/modals/createroom.html')">
                  Create a Room
          </button>
@@ -32,4 +31,3 @@
 
 
   </div>
-</div>

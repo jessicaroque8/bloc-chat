@@ -4,14 +4,18 @@
     var ref = firebase.database().ref().child("messages");
     var messages = $firebaseArray(ref);
 
-    Message.getByRoomId = function(roomId) {
-      ref.orderByChild('roomID').equalTo(roomId).on('value', function(snapshot) {
-         console.log(snapshot.val());
-      });
+    Message.all = messages;
+
+    Message.activeMessages = null;
+
+    Message.setActive = function(roomId) {
+      Message.activeMessages = $firebaseArray(ref.orderByChild('roomID').equalTo(roomId));
+      return Message.activeMessages;
     };
 
+
     return Message;
-    }
+   }
 
 
   angular

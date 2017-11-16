@@ -1,9 +1,11 @@
 (function() {
     function HomeCtrl(Room, Message, $firebaseArray) {
       this.Room = Room;
-      this.Message = Message;
+      this.activeRoom = Room.activeRoom;
 
-      console.log(Message.getByRoomId('XM6jH2gTrm'));
+
+      this.Message = Message;
+      this.activeMsg = Message.activeMessages;
 
     }
 

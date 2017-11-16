@@ -9,48 +9,42 @@ body {
   color: #333;
 }
 
-.page {
-  margin: 20px 0;
-}
-
-/*.page:after {
-  content: "";
-  display: table;
-  clear: both;
-}*/
-
 .wrapper {
   max-width: 1160px;
   margin: 0 auto;
-  /*position: relative;*/
+  position: sticky;
   padding: 0 20px;
-  min-height: 600px;
+  height: 92vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
 }
 
 .content-wrapper {
   float: right;
   width: 100%;
+  height: inherit;
+  padding: 0;
+  margin 0;
 }
 
 .content {
-  margin-left: 320px;
-  padding: 20px;
+  margin-left: 235px;
+  padding: 10px;
   clear: both;
   overflow: auto;
   background: #ecf0f1;
-  min-height: 600px;
+  height: inherit;
   color: #222;
 }
 
 .sidebar {
   position: relative;
-  width: 320px;
-  margin-right: -320px;
+  width: 235px;
+  margin-right: -235px;
   float: right;
-  overflow: hidden;
   background: #1AA6B7;
   color: #eee;
-  min-height: 600px;
+  height: inherit;
 }
 
 a{
@@ -99,10 +93,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .custombtn {
-   background-color: #FF414D;
+   background-color: #FD5868;
    border: none;
    color: #fff;
-   margin-top: 10px;
+}
+
+.custombtn:hover {
+   background-color: #FF414D;
+   color: #fff;
 }
 
 .messages h2 {
@@ -122,17 +120,29 @@ h1, h2, h3, h4, h5, h6 {
 .messages ul {
    list-style: none;
    text-align: left;
-   position: absolute;
+   display: block;
    padding: 0px;
-   margin-left: -20px;
-   margin-right: 20px;
+   margin-left: -10px;
+   margin-right: -10px;
 }
 
 .messages li {
    padding: 10px;
 }
 
-.messages li:nth-child(2) {
+.msgrow {
    background-color: #E2EBED;
    text-align: right;
+}
+
+.container {
+   position: relative;
+   margin-right: 0;
+   width: 100%;
+   padding: 0;
+   bottom: 10px;
+}
+.sendmsg {
+   padding-left: 0;
+   padding-right: 0;
 }
