@@ -1,11 +1,11 @@
 (function() {
    function ModalCtrl ($uibModal, $log, $document) {
       var modal = this;
-      
+
 
         this.open = function (size, parentSelector, templateURL) {
           var parentElem = parentSelector ?
-            angular.element($document[0].querySelector('.content' + parentSelector)) : undefined;
+            angular.element($document[0].querySelector('.page' + parentSelector)) : undefined;
           var modalInstance = $uibModal.open({
             animation: true,
             backdrop: true,

@@ -1,10 +1,9 @@
-<div class="page modal-container">
+<div class="page">
   <div class="wrapper">
 
 
      <div class="content-wrapper">
-      <main class="content modal-container">
-
+      <main class="content" ui-view>
 
 
       </main>
@@ -16,16 +15,15 @@
 
 
       <ul ng-repeat="room in home.Rooms">
-          <li>
+          <li ui-sref="home.chat">
              {{ room.name }}
           </li>
       </ul>
 
-      <div ng-controller="ModalCtrl as modal">
-
-         <button type="button"
-             class="btn btn-default"
-             ng-click="modal.open('sm', '.modal-container', '/templates/modals/createroom.html')">
+      <div class="btn-container" ng-controller="ModalCtrl as modal">
+         <button type="custombtn"
+             class="custombtn btn btn-default"
+             ng-click="modal.open('sm', '.page', '/templates/modals/createroom.html')">
                  Create a Room
          </button>
       </div>

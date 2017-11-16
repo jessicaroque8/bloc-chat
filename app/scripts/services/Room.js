@@ -7,6 +7,7 @@
     //Turn the "rooms" database info into an array.
     var rooms = $firebaseArray(ref);
 
+
     /**
     * @desc Holds the Firebase array of rooms.
     * @type {Object}

@@ -5,13 +5,12 @@ html, body {
 
 body {
   background-color: #757575;
-  text-align: center;
   font-family: 'Hinds', sans-serif;
   color: #333;
 }
 
 .page {
-  margin: 20px 0
+  margin: 20px 0;
 }
 
 /*.page:after {
@@ -35,6 +34,7 @@ body {
 
 .content {
   margin-left: 320px;
+  padding: 20px;
   clear: both;
   overflow: auto;
   background: #ecf0f1;
@@ -48,7 +48,7 @@ body {
   margin-right: -320px;
   float: right;
   overflow: hidden;
-  background: #e67e22;
+  background: #1AA6B7;
   color: #eee;
   min-height: 600px;
 }
@@ -76,17 +76,57 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar li {
    font-family: 'Hind', sans-serif;
+   font-size: 1.5em;
    list-style: none;
-   background-color: #f39c12;
+   background-color: #5FCCC8;
    padding-top: 1vh;
    padding-bottom: 1vh;
    padding-left: 1vh;
+   text-align: center;
+}
+
+.sidebar h1 {
+   text-align: center;
 }
 
 .sidebar li:hover {
-   background-color: #1abc9c;
+   background-color: #ecf0f1;
+   color: #333;
 }
 
-.modal-title {
-   margin: auto;
+.btn-container {
+   text-align: center;
+}
+
+.custombtn {
+   background-color: #FF414D;
+   border: none;
+   color: #fff;
+   margin-top: 10px;
+}
+
+.messages h1 {
+   text-align: left;
+   font-size: 2em;
+   margin-top: 0px;
+   text-align: center;
+   color: #5FCCC8;
+   font-weight: bold;
+}
+.messages ul {
+   list-style: none;
+   text-align: left;
+   position: absolute;
+   padding: 0px;
+   margin-left: -20px;
+   margin-right: 20px;
+}
+
+.messages li {
+   padding: 10px;
+}
+
+.messages li:nth-child(2) {
+   background-color: #E2EBED;
+   text-align: right;
 }
