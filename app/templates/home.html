@@ -14,8 +14,8 @@
       <h1>Bloc Chat</h1>
 
 
-      <ul ng-repeat="room in home.Rooms">
-          <li ui-sref="home.chat">
+      <ul ng-repeat="room in home.Room.all">
+          <li ui-sref="home.chat" ng-click="home.Room.setActive(room)">
              {{ room.name }}
           </li>
       </ul>

@@ -14,7 +14,7 @@
             })
              .state('home.chat', {
                  url: 'chat',
-                 controller: 'HomeCtrl as home',
+                 controller: 'HomeCtrl as homechat',
                  templateUrl: '/templates/messages.html',
               });
    }

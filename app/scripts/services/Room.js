@@ -14,6 +14,8 @@
     */
     Room.all = rooms;
 
+    Room.activeRoom = null;
+
 
     /**
     * @function add
@@ -27,6 +29,12 @@
            rooms.$indexFor(id);
         });
      };
+
+    Room.setActive = function (room) {
+      Room.activeRoom = room;
+      console.log(Room.activeRoom);
+   };
+
 
     return Room;
   }
