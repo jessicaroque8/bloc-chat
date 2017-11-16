@@ -1,12 +1,13 @@
 (function() {
-    function HomeCtrl(Room, $firebaseArray) {
+    function HomeCtrl(Room, Message, $firebaseArray) {
       this.Room = Room;
+      this.Message = Message;
 
-
+      console.log(Message.getByRoomId('XM6jH2gTrm'));
 
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', '$firebaseArray', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', '$firebaseArray', HomeCtrl]);
 })();
