@@ -8,13 +8,6 @@
 
       Message.activeMessages = null;
 
-      // Message.getByRoomName = function (roomName) {
-      //     for (var i = 0; i < Room.all ; i++) {
-      //
-      //     }
-      //  };
-      // };
-
       Message.getByRoomID = function (roomID) {
          return $firebaseArray(ref.orderByChild('roomID').equalTo(roomID));
       };
