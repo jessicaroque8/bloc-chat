@@ -1,10 +1,13 @@
+.messages {
+   height: 100%;
+   width: 100%;
+}
+
 .messages ul {
    list-style: none;
    text-align: left;
    display: block;
    padding: 0px;
-   margin-left: -10px;
-   margin-right: -10px;
 }
 
 .messages li {
@@ -16,7 +19,7 @@
 }
 
 .indvmessages {
-   height: 80%;
+   height: 85%;
    overflow: scroll;
 }
 
@@ -38,13 +41,14 @@
    text-align: right;
 }
 
-.container {
-   position: relative;
-   margin-right: 0;
-   width: 100%;
+.inputmsg {
+   position: fixed;
+   margin-right: 30px;
+   height: 30px;
    padding: 0;
-   bottom: 10px;
+   bottom: 40px;
 }
+
 .sendmsg {
    padding-left: 0;
    padding-right: 0;

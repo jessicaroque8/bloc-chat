@@ -4,7 +4,7 @@
    </div>
 
    <div class="indvmessages">
-      <ul ng-repeat="message in home.Message.activeMessages" ng-class-even="'msgrow'">
+      <ul ng-repeat="message in home.Message.activeMessages | orderBy: -message.sentAt" ng-class-even="'msgrow'">
          <li>
             <h3>{{ message.username}}</h3> <span class="time">{{ message.sentAt | date: 'h:mm a' }}</span>
 
@@ -15,7 +15,7 @@
       </ul>
    </div>
 
-   <div class="container inputmsg">
+   <div class="inputmsg">
       <div class="sendmsg col-lg-6">
           <div class="input-group" ng-controller="MessageCtrl as message">
             <input type="text" class="form-control " ng-model="message.newMessage">
@@ -23,12 +23,6 @@
               <button class="btn btn-default" type="submit" ng-click="message.sendClear(message.newMessage)">Go!</button>
             </span>
           </div>
-        </div>
       </div>
    </div>
-
-
-
-
-
 </div>

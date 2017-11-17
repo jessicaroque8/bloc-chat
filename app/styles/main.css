@@ -1,5 +1,5 @@
 html, body {
-   height: 100%;
+   height: 98%;
 }
 
 
@@ -30,7 +30,7 @@ body {
 .content {
   margin-left: 235px;
   padding: 10px;
-  overflow: auto;
+  overflow: hidden;
   clear: both;
   background: #ecf0f1;
   height: inherit;
