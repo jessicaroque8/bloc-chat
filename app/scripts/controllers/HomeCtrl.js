@@ -1,7 +1,7 @@
 (function() {
     function HomeCtrl(Room, Message, $firebaseArray) {
       this.Room = Room;
-
+      this.Rooms = Room.all;
       this.Message = Message;
 
 

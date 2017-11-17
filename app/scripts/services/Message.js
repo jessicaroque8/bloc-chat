@@ -1,25 +1,34 @@
 (function() {
-  function Message($firebaseArray) {
-    var Message = {};
-    var ref = firebase.database().ref().child("messages");
-    var messages = $firebaseArray(ref);
+  function Message($firebaseArray, Room) {
+      var Message = {};
+      var ref = firebase.database().ref().child("messages");
+      var messages = $firebaseArray(ref);
 
-    Message.all = messages;
+      Message.all = messages;
 
-    Message.activeMessages = null;
+      Message.activeMessages = null;
 
-    Message.setActive = function(roomId) {
-      Message.activeMessages = $firebaseArray(ref.orderByChild('roomID').equalTo(roomId));
+      // Message.getByRoomName = function (roomName) {
+      //     for (var i = 0; i < Room.all ; i++) {
+      //
+      //     }
+      //  };
+      // };
 
-      return Message.activeMessages;
-    };
+      Message.getByRoomID = function (roomID) {
+         return $firebaseArray(ref.orderByChild('roomID').equalTo(roomID));
+      };
 
+      Message.setActive = function(roomID) {
+         Message.activeMessages = Message.getByRoomID(roomID);
+         return Message.activeMessages;
+      };
 
     return Message;
-   }
+}
 
 
   angular
     .module('blocChat')
-    .factory('Message', ['$firebaseArray', Message]);
+    .factory('Message', ['$firebaseArray', 'Room', Message]);
 })();

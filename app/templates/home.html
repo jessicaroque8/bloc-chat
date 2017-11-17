@@ -13,7 +13,7 @@
       <h1>Bloc Chat</h1>
 
 
-      <ul ng-repeat="room in home.Room.all">
+      <ul ng-repeat="room in home.Rooms">
           <li ui-sref="home.chat" ng-click="home.Room.setActive(room); home.Message.setActive(room.$id)">
              {{ room.name }}
           </li>
