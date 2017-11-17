@@ -1,0 +1,51 @@
+.messages ul {
+   list-style: none;
+   text-align: left;
+   display: block;
+   padding: 0px;
+   margin-left: -10px;
+   margin-right: -10px;
+}
+
+.messages li {
+   padding-left: 10px;
+}
+
+.messages p {
+   margin-bottom: 5px;
+}
+
+.indvmessages {
+   height: 80%;
+   overflow: scroll;
+}
+
+.indvmessages h3 {
+   display: inline;
+   font-size: 1em;
+   color: #1AA6B7;
+}
+
+.indvmessages  .time {
+   padding-left: 1em;
+   display: inline;
+   font-size: 0.75em;
+   color: #757575;
+}
+
+.msgrow {
+   background-color: #E2EBED;
+   text-align: right;
+}
+
+.container {
+   position: relative;
+   margin-right: 0;
+   width: 100%;
+   padding: 0;
+   bottom: 10px;
+}
+.sendmsg {
+   padding-left: 0;
+   padding-right: 0;
+}

@@ -21,16 +21,15 @@
       Message.send = function (newMessage) {
          var activeRoomID = Room.getActiveID();
          var user = $cookies.get('blocChatCurrentUser');
-         console.log(user);
-         Message.all = messages.$add({content: newMessage, roomID: activeRoomID, username: user}).then(function(ref) {
+         Message.all = messages.$add({content: newMessage, roomID: activeRoomID, sentAt: firebase.database.ServerValue.TIMESTAMP, username: user }).then(function(ref) {
             var id = ref.key;
-            console.log("added new message with id " + id);
+            console.log("added new message by " + user + " with message id " + id);
             messages.$indexFor(id);
          });
       };
 
     return Message;
-}
+   }
 
 
   angular

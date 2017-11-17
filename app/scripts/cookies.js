@@ -20,6 +20,7 @@
            });
            login.result.then(function (username) {
              $cookies.put('blocChatCurrentUser', username);
+             console.log("cookies saved for " + currentUser);
              }, function () {
                 $log.info('Username set at: ' + new Date());
                 console.log($cookies.get('blocChatCurrentUser'));

@@ -6,7 +6,8 @@
    <div class="indvmessages">
       <ul ng-repeat="message in home.Message.activeMessages" ng-class-even="'msgrow'">
          <li>
-            <h3>{{ message.username}}</h3>
+            <h3>{{ message.username}}</h3> <span class="time">{{ message.sentAt | date: 'h:mm a' }}</span>
+
             <p>
                {{ message.content }}
             </p>
@@ -14,12 +15,12 @@
       </ul>
    </div>
 
-   <div class="container">
+   <div class="container inputmsg">
       <div class="sendmsg col-lg-6">
-          <div class="input-group">
-            <input type="text" class="form-control" ng-model="newMessage">
+          <div class="input-group" ng-controller="MessageCtrl as message">
+            <input type="text" class="form-control " ng-model="message.newMessage">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="submit" ng-click="home.Message.send(newMessage)">Go!</button>
+              <button class="btn btn-default" type="submit" ng-click="message.sendClear(message.newMessage)">Go!</button>
             </span>
           </div>
         </div>

@@ -30,8 +30,8 @@ body {
 .content {
   margin-left: 235px;
   padding: 10px;
-  clear: both;
   overflow: auto;
+  clear: both;
   background: #ecf0f1;
   height: inherit;
   color: #222;
@@ -110,39 +110,4 @@ h1, h2, h3, h4, h5, h6 {
    text-align: center;
    color: #1AA6B7;
    font-weight: bold;
-}
-
-.messages h3 {
-   font-size: 1em;
-   color: #1AA6B7;
-}
-
-.messages ul {
-   list-style: none;
-   text-align: left;
-   display: block;
-   padding: 0px;
-   margin-left: -10px;
-   margin-right: -10px;
-}
-
-.messages li {
-   padding: 10px;
-}
-
-.msgrow {
-   background-color: #E2EBED;
-   text-align: right;
-}
-
-.container {
-   position: relative;
-   margin-right: 0;
-   width: 100%;
-   padding: 0;
-   bottom: 10px;
-}
-.sendmsg {
-   padding-left: 0;
-   padding-right: 0;
 }
