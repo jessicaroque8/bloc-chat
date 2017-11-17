@@ -20,8 +20,13 @@
 
     Room.setActive = function (room) {
       Room.activeRoom = room;
+      console.log(Room.activeRoom);
    };
 
+   Room.getActiveID = function () {
+      var ID = Room.activeRoom.$id;
+      return(ID);
+   };
 
     return Room;
   }

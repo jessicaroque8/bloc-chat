@@ -14,7 +14,7 @@
 
 
       <ul ng-repeat="room in home.Rooms">
-          <li ui-sref="home.chat" ng-click="home.Room.setActive(room); home.Message.setActive(room.$id)">
+          <li ui-sref="home.chat" ng-click="home.Room.setActive(room); home.Message.setActive();">
              {{ room.name }}
           </li>
       </ul>
