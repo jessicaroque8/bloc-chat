@@ -1,0 +1,21 @@
+<div ng-controller="AuthCtrl as auth" ui-view>
+  <div ng-show="firebaseUser">
+    <p>Hello, {{ auth.firebaseUser.displayName }}</p>
+    <button ng-click="auth.$signOut()">Sign Out</button>
+  </div>
+  <div ng-hide="firebaseUser">
+     <h3>Login</h3>
+     <p>
+        <label>Username</label>
+        <input ng-model="auth.email" />
+     </p>
+     <P>
+        <label>Password</label>
+        <input ng-model="auth.password"  />
+     </P>
+
+     <button ng-click="auth.signIn()">Sign In</button>
+
+     <a ui-sref="home.welcome.createacc">Create Account</a>
+  </div>
+</div>

@@ -1,8 +1,7 @@
 (function() {
   function BlocChatCookies($cookies, $uibModal) {
-    var currentUser = $cookies.get('blocChatCurrentUser');
-
-    if (!currentUser || currentUser === '') {
+    var currentUser = $cookies.get('blocChatUser');
+    if (!currentUser || currentUser == '') {
     var login = $uibModal.open({
              animation: true,
              backdrop: 'static',
@@ -11,7 +10,7 @@
              ariaDescribedBy: 'modal-body',
              templateUrl: '/templates/modals/setusername.html',
              controller: 'userModalInstanceCtrl',
-             controllerAs: 'user',
+             controllerAs: 'login',
              resolve: {
                 input: function () {
                    return console.log('resolve here');
@@ -19,11 +18,11 @@
              }
            });
            login.result.then(function (username) {
-             $cookies.put('blocChatCurrentUser', username);
-             console.log("cookies saved for " + currentUser);
+             $cookies.put('blocChatUser', username);
+             console.log("cookies saved for " + username);
              }, function () {
                 $log.info('Username set at: ' + new Date());
-                console.log($cookies.get('blocChatCurrentUser'));
+                console.log($cookies.get('blocChatUser'));
              });
     }
   }

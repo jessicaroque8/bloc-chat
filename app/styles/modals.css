@@ -1,0 +1,13 @@
+.modal-header {
+   text-align: center;
+}
+.modal-body {
+   display: block;
+   margin: auto;
+}
+
+.btn-primary {
+   background-color: #FD5868;
+   border: none;
+   color: #fff;
+}

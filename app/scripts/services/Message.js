@@ -20,7 +20,7 @@
 
       Message.send = function (newMessage) {
          var activeRoomID = Room.getActiveID();
-         var user = $cookies.get('blocChatCurrentUser');
+         var user = $cookies.get('blocChatUser');
          Message.all = messages.$add({content: newMessage, roomID: activeRoomID, sentAt: firebase.database.ServerValue.TIMESTAMP, username: user }).then(function(ref) {
             var id = ref.key;
             console.log("added new message by " + user + " with message id " + id);
