@@ -2,6 +2,8 @@
     function AuthCtrl(Auth, $state, $firebaseAuth) {
       this.auth = Auth;
       var firebaseUser = this.auth.$getAuth();
+      var googleProvider = new firebase.auth.GoogleAuthProvider();
+
 
          // if (firebaseUser) {
          //   console.log("Signed in as:", firebaseUser.uid);
@@ -16,6 +18,12 @@
             }).catch(function(error) {
                console.error("Authentication failed:", error);
             });
+      };
+
+      this.signInGoogle = function() {
+         firebase.auth().signInWithRedirect(googleProvider);
+
+         $state.go('home');
       };
 
       this.createUser = function() {
@@ -60,6 +68,7 @@
       this.auth.$onAuthStateChanged(function(firebaseUser) {
          this.firebaseUser = firebaseUser;
       });
+
 
     }
 
