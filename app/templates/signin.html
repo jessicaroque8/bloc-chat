@@ -4,18 +4,21 @@
     <button ng-click="auth.$signOut()">Sign Out</button>
   </div>
   <div ng-hide="firebaseUser">
-     <h3>Login</h3>
+     <h3>Log In</h3>
+
      <p>
-        <label>Username</label>
-        <input ng-model="auth.email" />
+       <a ui-sref="login.create">Create a free account.</a>
+     </p>
+
+     <p>
+      <label>Email</label>
+      <input ng-model="auth.email" />
      </p>
      <P>
-        <label>Password</label>
-        <input ng-model="auth.password"  />
+      <label>Password</label>
+      <input ng-model="auth.password"  />
      </P>
 
      <button ng-click="auth.signIn()">Sign In</button>
-
-     <a ui-sref="home.welcome.createacc">Create Account</a>
   </div>
 </div>

@@ -7,9 +7,17 @@
             });
 
       $stateProvider
-          .state('home', {
-               abstract: true,
+          .state('login', {
                url: '/',
+               controller: 'AuthCtrl as auth',
+               templateUrl: '/templates/signin.html',
+          })
+             .state('login.create', {
+                  url: '',
+                  templateUrl: '/templates/auth/createaccount.html',
+             })
+          .state('home', {
+               url: '/home',
                controller: 'HomeCtrl as home',
                templateUrl: '/templates/home.html',
                resolve: {
@@ -21,14 +29,6 @@
                   }]
                }
             })
-             .state('home.welcome', {
-                url: '',
-                controller: 'AuthCtrl as auth',
-                templateUrl: '/templates/signin/welcome.html'
-             })
-               .state('home.welcome.createacc', {
-                  templateUrl: '/templates/signin/createaccount.html'
-               })
              .state('home.chat', {
                  url: 'chat',
                  templateUrl: '/templates/messages.html',

@@ -1,12 +1,17 @@
 (function() {
-    function AuthCtrl(Auth, $firebaseAuth) {
+    function AuthCtrl(Auth, $state, $firebaseAuth) {
       this.auth = Auth;
-      this.user = firebase.auth().currentUser;
+      var firebaseUser = this.auth.$getAuth();
 
-
+         // if (firebaseUser) {
+         //   console.log("Signed in as:", firebaseUser.uid);
+         // } else {
+         //   console.log("Signed out");
+         // }
 
       this.signIn = function() {
             this.auth.$signInWithEmailAndPassword(this.email, this.password).then(function(firebaseUser) {
+               $state.go('home');
                console.log("Signed in as:", firebaseUser.uid);
             }).catch(function(error) {
                console.error("Authentication failed:", error);
@@ -29,16 +34,16 @@
 
       };
 
-      this.updateProfile = function() {
-            this.user.updateProfile({
-               displayName: this.displayname,
-               photoURL: this.photourl
-            }).then(function() {
-               // Update successful.
-            }).catch(function(error) {
-               // An error happened.
-            });
-      };
+      // this.updateProfile = function() {
+      //       this.user.updateProfile({
+      //          displayName: this.displayname,
+      //          photoURL: this.photourl
+      //       }).then(function() {
+      //          // Update successful.
+      //       }).catch(function(error) {
+      //          // An error happened.
+      //       });
+      // };
 
       this.deleteUser = function() {
          this.authMessage = null;
@@ -60,5 +65,6 @@
 
     angular
         .module('blocChat')
-        .controller('AuthCtrl', ['Auth', '$firebaseAuth', AuthCtrl]);
+        .controller('AuthCtrl', ['Auth', '$state', '$firebaseAuth', AuthCtrl]);
 })();
+console.log("authctrl loaded");

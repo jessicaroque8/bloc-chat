@@ -1,6 +1,7 @@
 (function () {
    function Auth ($firebaseAuth) {
       return $firebaseAuth();
+
   }
 
 

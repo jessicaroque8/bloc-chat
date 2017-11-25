@@ -1,3 +1,6 @@
+<h3>Create an Account</h3>
+
+
 <p>
    Email: <input type="text" ng-model="auth.email">
 </p>
@@ -9,7 +12,7 @@
 <br><br>
 
 <button ng-click="auth.createUser(); ">Create User</button>
-<a ui-sref="home.welcome">Go Back</a>
+<a ui-sref="login">Go Back</a>
 
 <p ng-if="authMessage">Message: <strong>{{ message }}</strong></p>
 <p ng-if="authError">Error: <strong>{{ error }}</strong></p>

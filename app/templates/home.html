@@ -13,18 +13,23 @@
       <h1>Bloc Chat</h1>
 
 
-      <ul ng-repeat="room in home.Rooms">
+      <ul ng-repeat="room in home.Rooms" ng-show="home.User">
           <li ui-sref="home.chat" ng-click="home.Room.setActive(room); home.Message.setActive();">
              {{ room.name }}
           </li>
       </ul>
 
-      <div class="btn-container" ng-controller="ModalCtrl as modal">
+      <div class="btn-container" ng-controller="ModalCtrl as modal" ng-show="home.User">
          <button type="submit"
              class="custombtn btn btn-lg"
              ng-click="modal.open('sm', '/templates/modals/createroom.html')">
                  Create a Room
          </button>
+      </div>
+
+      <div class="account" ng-show="home.User">
+         Hello,
+         <br />{{ home.User.email }}
       </div>
    </section>
 
