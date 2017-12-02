@@ -1,8 +1,8 @@
 (function() {
-  function Message($firebaseArray, Room, $cookies) {
-      var Message = {};
-      var ref = firebase.database().ref().child("messages");
-      var messages = $firebaseArray(ref);
+  function Message($firebaseArray, Room, Users) {
+      const Message = {};
+      const ref = firebase.database().ref().child("messages");
+      const messages = $firebaseArray(ref);
 
       Message.all = messages;
 
@@ -13,16 +13,16 @@
       };
 
       Message.setActive = function() {
-         var activeRoomID = Room.getActiveID();
+         let activeRoomID = Room.getActiveID();
          Message.activeMessages = Message.getByRoomID(activeRoomID);
          return Message.activeMessages;
       };
 
       Message.send = function (newMessage) {
-         var activeRoomID = Room.getActiveID();
-         var user = $cookies.get('blocChatUser');
-         Message.all = messages.$add({content: newMessage, roomID: activeRoomID, sentAt: firebase.database.ServerValue.TIMESTAMP, username: user }).then(function(ref) {
-            var id = ref.key;
+         let activeRoomID = Room.getActiveID();
+         let user = Users.currentUser.email;
+         messages.$add({content: newMessage, roomID: activeRoomID, sentAt: firebase.database.ServerValue.TIMESTAMP, username: user }).then(function(ref) {
+            let id = ref.key;
             console.log("added new message by " + user + " with message id " + id);
             messages.$indexFor(id);
          });
@@ -34,5 +34,5 @@
 
   angular
     .module('blocChat')
-    .factory('Message', ['$firebaseArray', 'Room', '$cookies', Message]);
+    .factory('Message', ['$firebaseArray', 'Room', 'Users', Message]);
 })();

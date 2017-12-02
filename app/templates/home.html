@@ -3,8 +3,6 @@
 
      <div class="content-wrapper">
       <main class="content" ui-view>
-
-
       </main>
     </div>
 
@@ -12,14 +10,13 @@
     <section class="sidebar">
       <h1>Bloc Chat</h1>
 
-
-      <ul ng-repeat="room in home.Rooms" ng-show="home.User">
+      <ul ng-repeat="room in home.Rooms" ng-show="home.Users.currentUser">
           <li ui-sref="home.chat" ng-click="home.Room.setActive(room); home.Message.setActive();">
              {{ room.name }}
           </li>
       </ul>
 
-      <div class="btn-container" ng-controller="ModalCtrl as modal" ng-show="home.User">
+      <div class="btn-container" ng-controller="ModalCtrl as modal" ng-show="home.Users.currentUser">
          <button type="submit"
              class="custombtn btn btn-lg"
              ng-click="modal.open('sm', '/templates/modals/createroom.html')">
@@ -27,12 +24,12 @@
          </button>
       </div>
 
-      <div class="account" ng-show="home.User">
+      <div class="account" ng-show="home.currentUser">
          Hello,
-         <br />{{ home.User.email }}
+         <br />{{ home.currentUser.email }}
 
          <p>
-            <button ui-sref="login" ng-click="home.Users.signOutUser()">Sign Out</button>
+            <button ui-sref="login" ng-click="home.Users.signOut()">Sign Out</button>
 
          </p>
       </div>

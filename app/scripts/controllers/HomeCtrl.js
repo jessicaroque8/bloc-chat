@@ -1,16 +1,15 @@
 (function() {
-    function HomeCtrl(Users, Auth, $firebaseAuth, Room, Message, $firebaseArray) {
+    function HomeCtrl(Users, Room, Message) {
       this.Room = Room;
       this.Rooms = Room.all;
       this.Message = Message;
-      this.User = firebase.auth().currentUser;
-      console.log(this.User);
       this.Users = Users;
+      this.currentUser = Users.currentUser;
 
 
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Users', 'Auth', '$firebaseAuth', 'Room', 'Message', '$firebaseArray', HomeCtrl]);
+        .controller('HomeCtrl', ['Users', 'Room', 'Message', HomeCtrl]);
 })();

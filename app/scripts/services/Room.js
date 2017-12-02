@@ -34,5 +34,4 @@
   angular
     .module('blocChat')
     .factory('Room', ['$firebaseArray', Room]);
-console.log("roomctrl loaded");
 })();

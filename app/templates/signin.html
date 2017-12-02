@@ -1,8 +1,4 @@
 <div ng-controller="AuthCtrl as auth" ui-view>
-  <div ng-show="firebaseUser">
-    <p>Hello, {{ auth.firebaseUser.displayName }}</p>
-    <button ng-click="auth.$signOut()">Sign Out</button>
-  </div>
   <div ng-hide="firebaseUser">
      <h3>Log In</h3>
 
@@ -24,10 +20,10 @@
       <input ng-model="password"  />
      </P>
 
-     <button ng-click="auth.signIn(email, password)">Sign In</button>
+     <button ng-click="auth.Users.signIn(email, password)">Sign In</button>
 
      <div class="providers"><br />
-        <button ng-click="auth.signInGoogle()">Sign in with Google <i class="fa fa-google" aria-hidden="true"></i></button>
+        <button ng-click="auth.Users.signInGoogle()">Sign in with Google <i class="fa fa-google" aria-hidden="true"></i></button>
      </div>
 
    </div>

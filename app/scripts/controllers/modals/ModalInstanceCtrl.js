@@ -1,10 +1,11 @@
 (function () {
-   function ModalInstanceCtrl ($uibModalInstance, Room) {
-      var modal = this;
-      var RoomObject = Room;
+   function ModalInstanceCtrl ($uibModalInstance, Room, Message) {
+      const modal = this;
+      this.Room = Room;
 
          modal.ok = function (room) {
-            RoomObject.add(room);
+            Room.add(room);
+            Room.setActive(room);
            $uibModalInstance.close(room);
          };
 
@@ -16,6 +17,5 @@
 
    angular
       .module('blocChat')
-      .controller('ModalInstanceCtrl', ['$uibModalInstance', 'Room', ModalInstanceCtrl]);
-console.log("modalinstancectrl loaded");
+      .controller('ModalInstanceCtrl', ['$uibModalInstance', 'Room', 'Message', ModalInstanceCtrl]);
 })();

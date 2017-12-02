@@ -1,17 +1,32 @@
 (function () {
    function Users (Auth, $state) {
-      var Users = {};
+      const Users = {};
+      const googleProvider = new firebase.auth.GoogleAuthProvider();
       Users.auth = Auth;
       Users.authMessage = null;
       Users.authError = null;
+      Users.currentUser = null;
 
-      Users.signOutUser = function () {
+      Users.signOut = function () {
          $state.go('login');
          firebase.auth().signOut().then(function() {
            console.log('Signed Out');
          }, function(error) {
            console.error('Sign Out Error', error);
          });
+      };
+
+      Users.signIn = function(email, password) {
+            Users.auth.$signInWithEmailAndPassword(email, password).then(function(firebaseUser) {
+               $state.go('home');
+               console.log("Signed in as:", firebaseUser.uid);
+            }).catch(function(error) {
+               console.error("Authentication failed:", error);
+            });
+      };
+
+      Users.signInGoogle = function() {
+         firebase.auth().signInWithRedirect(googleProvider);
       };
 
       Users.createUser = function(email, password) {
@@ -28,7 +43,7 @@
       };
 
       Users.auth.$onAuthStateChanged(function(firebaseUser) {
-         this.firebaseUser = firebaseUser;
+         Users.currentUser = firebaseUser;
          console.log("user change: " + firebaseUser);
       });
 

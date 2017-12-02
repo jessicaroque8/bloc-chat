@@ -27,7 +27,7 @@
                }
             })
              .state('home.chat', {
-                 url: 'chat',
+                 url: '/chat',
                  templateUrl: '/templates/messages.html',
                  resolve: {
                     "currentAuth": ["Auth", function(Auth) {

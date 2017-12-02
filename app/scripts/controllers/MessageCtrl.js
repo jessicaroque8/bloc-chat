@@ -1,14 +1,14 @@
 (function() {
-    function MessageCtrl(currentAuth, Room, Message, $cookies, $firebaseArray) {
+    function MessageCtrl(Room, Message, $cookies, $firebaseArray) {
       this.Message = Message;
       this.newMessage = "";
-      this.sendClear = function(message) {
-         Message.send(message);
+      this.sendClear = function() {
+         Message.send(this.newMessage);
          this.newMessage = "";
       };
    }
 
     angular
         .module('blocChat')
-        .controller('MessageCtrl', ['currentAuth', 'Room', 'Message', '$cookies', '$firebaseArray', MessageCtrl]);
+        .controller('MessageCtrl', ['Room', 'Message', '$cookies', '$firebaseArray', MessageCtrl]);
 })();
