@@ -68,6 +68,10 @@ h1, h2, h3, h4, h5, h6 {
    font-family: 'Montserrat', sans-serif;
 }
 
+section, .sidebar {
+   
+}
+
 .sidebar li {
    font-family: 'Hind', sans-serif;
    font-size: 1.5em;
@@ -102,6 +106,16 @@ h1, h2, h3, h4, h5, h6 {
 .custombtn:hover {
    background-color: #FF414D;
    color: #fff;
+}
+
+.account {
+   margin-top: 10px;
+   text-align: center;
+}
+
+.account button {
+   margin-top: 10px;
+   color: #5FCCC8;
 }
 
 .messages h2 {

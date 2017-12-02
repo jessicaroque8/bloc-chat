@@ -25,6 +25,11 @@
             });
       };
 
+      Users.clearErrMsg = function() {
+         Users.authMessage = null;
+         Users.authError = null;
+      };
+
       Users.signInGoogle = function() {
          firebase.auth().signInWithRedirect(googleProvider);
       };

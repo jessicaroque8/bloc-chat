@@ -1,0 +1,24 @@
+.login {
+   text-align: center;
+}
+
+.login h3 {
+   color: #fff;
+   margin-bottom: 20px;
+}
+
+.login label {
+   color: #fff;
+}
+
+.login div {
+   margin-bottom: 10px;
+}
+.login div:nth-child(2n) {
+   margin-bottom: 20px;
+}
+
+
+.login a {
+   color: #333;
+}
