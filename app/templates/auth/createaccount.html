@@ -1,18 +1,19 @@
 <h3>Create an Account</h3>
 
+<p>
+   {{ auth.Users.authMessage }}
+   {{ auth.Users.authError }}
+</p>
 
 <p>
-   Email: <input type="text" ng-model="auth.email">
+   Email: <input type="text" ng-model="email">
 </p>
 <p>
-   Password: <input type="text" ng-model="auth.password">
+   Password: <input type="text" ng-model="password">
 </p>
 
 
 <br><br>
 
-<button ng-click="auth.createUser(); ">Create User</button>
+<button ng-click="auth.Users.createUser(email, password)">Create User</button>
 <a ui-sref="login">Go Back</a>
-
-<p ng-if="authMessage">Message: <strong>{{ message }}</strong></p>
-<p ng-if="authError">Error: <strong>{{ error }}</strong></p>

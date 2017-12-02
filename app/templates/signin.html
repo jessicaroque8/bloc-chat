@@ -7,19 +7,24 @@
      <h3>Log In</h3>
 
      <p>
+        {{ auth.Users.authMessage }}
+        {{ auth.Users.authError }}
+     </p>
+
+     <p>
        <a ui-sref="login.create">Create a free account.</a>
      </p>
 
      <p>
       <label>Email</label>
-      <input ng-model="auth.email" />
+      <input ng-model="email" />
      </p>
      <P>
       <label>Password</label>
-      <input ng-model="auth.password"  />
+      <input ng-model="password"  />
      </P>
 
-     <button ng-click="auth.signIn()">Sign In</button>
+     <button ng-click="auth.signIn(email, password)">Sign In</button>
 
      <div class="providers"><br />
         <button ng-click="auth.signInGoogle()">Sign in with Google <i class="fa fa-google" aria-hidden="true"></i></button>

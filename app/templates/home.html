@@ -32,7 +32,8 @@
          <br />{{ home.User.email }}
 
          <p>
-            <a href="/templates/auth/signout.html"
+            <button ui-sref="login" ng-click="home.Users.signOutUser()">Sign Out</button>
+
          </p>
       </div>
    </section>
